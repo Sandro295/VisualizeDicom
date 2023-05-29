@@ -9,5 +9,5 @@ include(${ITK_USE_FILE})
 find_package(VTK REQUIRED)
 include(${VTK_USE_FILE})
 
-add_executable(renderDICOM src/example_itkvtkdicom.cpp)
+add_executable(renderDICOM src/itkvtkdicom.cpp)
 target_link_libraries(renderDICOM ${VTK_LIBRARIES} ${ITK_LIBRARIES} )
