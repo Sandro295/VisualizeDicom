@@ -37,7 +37,7 @@ VTK_MODULE_INIT(vtkRenderingOpenGL2)
 VTK_MODULE_INIT(vtkInteractionStyle)
 
 using PixelType = int16_t;
-typedef itk::Image< PixelType, 3 > ImageType;
+typedef itk::Image<PixelType, 3> ImageType;
 
 namespace {
 // Callback for the interaction
@@ -106,11 +106,11 @@ ImageType::Pointer readDataArrayFromDICOM(std::string dirName)
 
 	std::cout << "\nReading: ";
 	std::cout << seriesIdentifier << std::endl;
-	using FileNamesContainer = std::vector< std::string >;
+	using FileNamesContainer = std::vector<std::string>;
 	FileNamesContainer fileNames =
 		nameGenerator->GetFileNames(seriesIdentifier);
 
-	using ReaderType = itk::ImageSeriesReader< ImageType >;
+	using ReaderType = itk::ImageSeriesReader<ImageType>;
 	auto reader = ReaderType::New();
 	using ImageIOType = itk::GDCMImageIO;
 	auto dicomIO = ImageIOType::New();
